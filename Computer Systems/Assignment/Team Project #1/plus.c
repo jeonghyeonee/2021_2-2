@@ -22,6 +22,8 @@ int search(char ch, int n, char str[])
     return idx;
 }
 
+// void *memmove(void *dest, const void *source, size_t n);
+
 int main()
 {
     char s1[] = "98989898989898989898989898.9898989898989898989898";
@@ -38,9 +40,10 @@ int main()
     printf("s2: %s\n", s2);
     // printf("size of s2: %d\n", sizeof(s2));
 
-    char s3[101] = "";  //result 배열 초기화
+    char s3[101] = "";
     char n1[100];
     char n2[100];
+    // char result[101] = "";
 
     int carry = 0;
     int sum = 0;
@@ -57,7 +60,7 @@ int main()
     int gap = abs(idx);
     // printf("gap: %d\n", gap);
 
-    // 끝에 0을 추가해 자리수를 맞춰주기
+    // 끝에 0을 추가해보고 싶습니다.
     for (int i = sizeof(s2)-1; i>= sizeof(s2)-(ss1-ss2-gap); i--)
     {
         append('0', s2);
@@ -68,13 +71,18 @@ int main()
     // printf("n1: %s\n", n1);
     // printf("n2: %s\n", n2);
 
+
     for (int i = sizeof(n1)-2; i>=0; i--)
     {   
         if (n1[i] == '.') {
             s3[i+1] = n1[i];
             continue;
         }
+        // printf("org sum: %d\n", sum);
+        // printf("n1: %d\n", n1[i]-'0');
+        // printf("n2: %d\n", n2[i]-'0');
         sum = (n1[i]-'0') + (n2[i]-'0') + carry;
+        // printf("sum: %d\n", sum);
         carry = sum / 10;
         sum = sum % 10;
         s3[i+1] = sum + '0';
@@ -84,5 +92,6 @@ int main()
     for (i=0; s3[i] == '0'; i++);
     printf("%s\n", s3 + i);
 
+    // printf("s3: %s\n", s3);
     return 0;
 }
