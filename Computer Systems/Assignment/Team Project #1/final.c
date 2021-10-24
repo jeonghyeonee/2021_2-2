@@ -178,8 +178,8 @@ void Subtraction(char s1[], char s2[], char s1_1[], char s2_1[], int ss1, int ss
     int sn2 = sizeof(n2);
     sprintf_s(n2, sn2, "%099s", s2_1);
 
-    printf("in sub n1: %s\n", n1);
-    printf("in sub n2: %s\n", n2);
+    //printf("in sub n1: %s\n", n1);
+    //printf("in sub n2: %s\n", n2);
 
     int carry = 0;
     int sub = 0;
@@ -188,10 +188,10 @@ void Subtraction(char s1[], char s2[], char s1_1[], char s2_1[], int ss1, int ss
 
     if (idx2 > idx1) {
 
-        printf("idx2>idx1");
+        //printf("idx2>idx1");
         //downtoup(n1, n2, s3);
 
-        for (int i = sn2 - 2; i > 0; i--)
+        for (int i = sizeof(n2) - 2; i >= 0; i--)
         {
             //printf("%s\n", n1[i]);
             if (n2[i] == '.') {
@@ -227,6 +227,80 @@ void Subtraction(char s1[], char s2[], char s1_1[], char s2_1[], int ss1, int ss
         s3[0] = itoc(carry);
         printf("-");
     }
+
+    else if (idx1 == idx2) {
+        if (strlen(s1) >= strlen(s2)) {
+            for (int i = sizeof(n1) - 2; i >= 0; i--)
+            {
+                // printf("s3: %s\n", s3+i);
+                if (n1[i] == '.') {
+                    s3[i + 1] = '.';
+                    continue;
+                }
+                else {
+                    int temp1 = n1[i] - '0';
+                    int temp2 = n2[i] - '0';
+
+                    temp1 = temp1 - carry;
+
+                    if (temp2 > temp1) {
+                        carry = 1;
+                        //printf("%s\n", n2+i);
+                        sub = 10 - temp2 + temp1;
+                        s3[i + 1] = itoc(sub);
+                        //char s = itoc(sub);
+                        //printf("%c\n", s);
+                    }
+                    else {
+                        sub = temp1 - temp2;
+                        //printf("#### sub_s: %s\n", s3);
+                        //char s = itoc(sub);
+                        //printf("%c\n", s);
+                        s3[i + 1] = itoc(sub);
+                        carry = 0;
+                    }
+                }
+            }
+            s3[0] = itoc(carry);
+        }
+        else {
+            for (int i = sizeof(n2) - 2; i >= 0; i--)
+            {
+                //printf("%s\n", n1[i]);
+                if (n2[i] == '.') {
+                    s3[i + 1] = '.';
+                    continue;
+                }
+                else {
+                    // int temp1 = ctoi(n1[i]);
+                    int temp1 = n1[i] - '0';
+                    //printf("%d\n", temp1);
+                    // int temp2 = ctoi(n2[i]);
+                    int temp2 = n2[i] - '0';
+                    //printf("%d\n", temp2);
+                    temp2 = temp2 - carry;
+                    //printf("%d\n", carry);
+                    if (temp1 > temp2) {
+                        carry = 1;
+                        //printf("%s\n", n2+i);
+                        sub = 10 - temp1 + temp2;
+                        //printf("%d\n", sub);
+                        // s3[i+1] = itoc(sub);
+                        s3[i + 1] = itoc(sub);
+                    }
+                    else {
+                        sub = temp2 - temp1;
+                        //printf("%d\n", sub);
+                        //s3[i+1] = itoc(sub);
+                        s3[i + 1] = itoc(sub);
+                        carry = 0;
+                    }
+                }
+            }
+            s3[0] = itoc(carry);
+            printf("-");
+        }
+    }
     /*else if (idx1 = idx2) {
         if (svalue > 0)
             uptodown(n1, n2, s3);
@@ -238,7 +312,7 @@ void Subtraction(char s1[], char s2[], char s1_1[], char s2_1[], int ss1, int ss
     */
 
     else {
-        printf("idx1>=idx2\n");
+        //printf("idx1>=idx2\n");
         //uptodown(n1, n2, s3);
         for (int i = sizeof(n1) - 2; i >= 0; i--)
         {
@@ -274,14 +348,15 @@ void Subtraction(char s1[], char s2[], char s1_1[], char s2_1[], int ss1, int ss
         s3[0] = itoc(carry);
     }
     //int n = 0;
+    //printf("last s3: %s\n", s3);
     for (i = 0; s3[i] == '0'; i++);
     //for (i; s3[i] != '\0'; i++)
-    printf("Subtraction result: %s\n", s3 + i);
+    printf("%s\n", s3 + i);
 }
 
 void Addition(char s1[], char s2[], char s1_1[], char s2_1[], int ss1, int ss2)
 {
-    printf("in add s1_1: %s\n", s1_1);
+    //printf("in add s1_1: %s\n", s1_1);
     char n1[100];
     char n2[100];
     char s3[101] = {'\0', };
@@ -307,8 +382,8 @@ void Addition(char s1[], char s2[], char s1_1[], char s2_1[], int ss1, int ss2)
 
     sprintf_s(n2, sn2, "%099s", s2_1);
 
-    printf("in plus n1: %s\n", n1);
-    printf("in plus n2: %s\n", n2);
+    //printf("in plus n1: %s\n", n1);
+    //printf("in plus n2: %s\n", n2);
 
     int carry = 0;
     int sum = 0;
@@ -328,7 +403,7 @@ void Addition(char s1[], char s2[], char s1_1[], char s2_1[], int ss1, int ss2)
     s3[0] = carry + '0';
 
     for (i = 0; s3[i] == '0'; i++);
-    printf("Addition result: %s\n", s3 + i);
+    printf("%s\n", s3 + i);
 }
 
 void eliminate(char* str, char ch) {
@@ -356,12 +431,12 @@ int compare(int* pt1, int* pt2) {
 
 int main()
 {
-    char s1[] = "+98989898989898989898989898.9898989898989898989898"; //"+989898989898989898989898989898989898989898989898"; 
-    char s1_1[100] = "+98989898989898989898989898.9898989898989898989898";//"+989898989898989898989898989898989898989898989898"; 
+    char s1[] = "+989898989898989898989898989898989898989898989898";//"-98989898989898989898989898.9898989898989898989898";  
+    char s1_1[100] = "+989898989898989898989898989898989898989898989898";//"+989898989898989898989898989898989898989898989898"; 
 
 
-    char s2[] = "+121212121212121212121212.1212121212121212"; //"+1212121212121212121212121212121212121212";
-    char s2_1[100] = "+121212121212121212121212.1212121212121212"; //"+1212121212121212121212121212121212121212"; 
+    char s2[] = "+1212121212121212121212121212121212121212"; //"+121212121212121212121212.1212121212121212";
+    char s2_1[100] = "+1212121212121212121212121212121212121212"; //"+121212121212121212121212.1212121212121212"; 
 
     if (s1_1[0] == '+') {
         eliminate(s1_1, '+');
@@ -431,11 +506,14 @@ int main()
             Addition(s1, s2, s1_1, s2_1, ss1, ss2);
         }
         else if (s1[0] == '+' && s2[0] == '-') {
-            Subtraction(s2, s1, s2_1, s1_1, ss2, ss1);
+            Subtraction(s1, s2, s1_1, s2_1, ss1, ss2);
         }
         else if (s1[0] == '-' && s2[0] == '+') {
             //downtoup(n1, n2);
-            Subtraction(s2, s1, s2_1, s1_1, ss2, ss1);
+            //Subtraction(s2, s1, s2_1, s1_1, ss2, ss1);
+            printf("-");
+            Subtraction(s1, s2, s1_1, s2_1, ss1, ss2);
+            printf("if \'--\', consider \'--\' as \'+\'");
         }
         else if (s1[0] == '-' && s2[0] == '-') {
             printf("-");
@@ -458,12 +536,15 @@ int main()
             Addition(s1, s2, s1_1, s2_1, ss1, ss2);
         }
         else if (s1[0] == '-' && s2[0] == '-') {
-            Subtraction(s2, s1, s2_1, s1_1, ss2, ss1);
+            printf("-");
+            Subtraction(s1, s2, s1_1, s2_1, ss1, ss2);
+            printf("if \'--\', consider \'--\' as \'+\'");
         }
         else {
             printf("undefined number");
         }
     }
+    printf("if there is no number, value is 0");
     // printf("s1_1: %s\n", s1_1);
     //Subtraction(s1, s2, s3, s1_1, s2_1, ss1, ss2);
     // Addition(s1, s2, s3, s1_1, s2_1, ss1, ss2);
