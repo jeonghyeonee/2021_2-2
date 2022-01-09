@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Delete a Node/Delete a Node.iml" filepath="$PROJECT_DIR$/Delete a Node/Delete a Node.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Hacker Rank.iml" filepath="$PROJECT_DIR$/.idea/Hacker Rank.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Insert a Node at a Specific Position in a LinkedList/Insert a Node at a Specific Position in a LinkedList.iml" filepath="$PROJECT_DIR$/Insert a Node at a Specific Position in a LinkedList/Insert a Node at a Specific Position in a LinkedList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Is Fibo/Is Fibo.iml" filepath="$PROJECT_DIR$/Is Fibo/Is Fibo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java Dequeue/Java Dequeue.iml" filepath="$PROJECT_DIR$/Java Dequeue/Java Dequeue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java Stack/Java Stack.iml" filepath="$PROJECT_DIR$/Java Stack/Java Stack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaArraylist/JavaArraylist.iml" filepath="$PROJECT_DIR$/JavaArraylist/JavaArraylist.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaComparator/JavaComparator.iml" filepath="$PROJECT_DIR$/JavaComparator/JavaComparator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaGenerics/JavaGenerics.iml" filepath="$PROJECT_DIR$/JavaGenerics/JavaGenerics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaInterface/JavaInterface.iml" filepath="$PROJECT_DIR$/JavaInterface/JavaInterface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Reverse a linked list/Reverse a linked list.iml" filepath="$PROJECT_DIR$/Reverse a linked list/Reverse a linked list.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SolveMeFrist/SolveMeFrist.iml" filepath="$PROJECT_DIR$/SolveMeFrist/SolveMeFrist.iml" />
+      <module fileurl="file://$PROJECT_DIR$/The Power Sum/The Power Sum.iml" filepath="$PROJECT_DIR$/The Power Sum/The Power Sum.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tree_Inorder Traversal/Tree_Inorder Traversal.iml" filepath="$PROJECT_DIR$/Tree_Inorder Traversal/Tree_Inorder Traversal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tree_Postorder Traversal/Tree_Postorder Traversal.iml" filepath="$PROJECT_DIR$/Tree_Postorder Traversal/Tree_Postorder Traversal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tree_Preorder Traversal/Tree_Preorder Traversal.iml" filepath="$PROJECT_DIR$/Tree_Preorder Traversal/Tree_Preorder Traversal.iml" />
+    </modules>
+  </component>
+</project>
